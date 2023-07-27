@@ -21,3 +21,9 @@ beforeEach(() => {
 it('creates one LI per comment', () => {
   expect(wrapped.find('li').length).toEqual(3);
 });
+
+it('shows the text for each comment', () => {
+  expect(wrapped.render().text()).toContain('Comment 1');
+  expect(wrapped.render().text()).toContain('Comment 2');
+  expect(wrapped.render().text()).toContain('Comment 3');
+});
