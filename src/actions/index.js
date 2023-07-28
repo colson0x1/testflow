@@ -11,7 +11,7 @@ export function saveComment(comment) {
 
 // fetchComments action creator
 export function fetchComments() {
-  const response = axios.fetch('http://jsonplaceholder.typicode.com/comments');
+  const response = axios.get('https://jsonplaceholder.typicode.com/comments');
 
   return {
     type: FETCH_COMMENTS,
