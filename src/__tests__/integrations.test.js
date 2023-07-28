@@ -27,7 +27,7 @@ afterEach(() => {
   moxios.uninstall();
 });
 
-it('can fetch a list of comments and display them', () => {
+it('can fetch a list of comments and display them', (done) => {
   // Attempt to render the *entire* App
   const wrapped = mount(
     <Root>
@@ -38,6 +38,12 @@ it('can fetch a list of comments and display them', () => {
   // find the 'fetchComments' button and click it
   wrapped.find('.fetch-comments').simulate('click');
 
-  // Expect to find a list of comments
-  expect(wrapped.find('li').length).toEqual(4);
+  setTimeout(() => {
+    wrapped.update();
+    // Expect to find a list of comments
+    expect(wrapped.find('li').length).toEqual(4);
+
+    done();
+    wrapped.unmount();
+  }, 100);
 });
