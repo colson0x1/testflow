@@ -2,8 +2,10 @@
 
 TestFlow is a simple comment post app built using React and Redux that allows users to add and display comments. The primary focus of this project is on unit testing and integration testing using Jest and Enzyme. The app utilizes the create-react-app boilerplate and follows best practices for testing React applications.
 
+### TestFlow app view
 ![testflow - add and fetch comments](https://i.imgur.com/zi8RSai.png)
 
+## TestFlow - running tests... success
 ![testflow](https://i.imgur.com/4Bg8MBg.png)
 
 ## React Version
