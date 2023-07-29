@@ -7,17 +7,17 @@ class CommentBox extends Component {
 
   // component just got rendered
   componentDidMount() {
-    this.shouldNavigateAway()
+    this.shouldNavigateAway();
   }
 
   // component just got updated (received props)
   componentDidUpdate() {
-    this.shouldNavigateAway()
+    this.shouldNavigateAway();
   }
 
   shouldNavigateAway() {
     if (!this.props.auth) {
-      console.log('I NEED TO LEAVE!')
+      this.props.history.push('/');
     }
   }
 
