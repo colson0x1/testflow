@@ -1,4 +1,4 @@
-const asyncMiddleware =
+const async =
   ({ dispatch }) =>
   (next) =>
   (action) => {
@@ -6,6 +6,8 @@ const asyncMiddleware =
     // has a promise on its 'payload' property
     // If it does, then wait for it to resolve
     // If it doesn't, then send the action on to the next middleware
+
+    // debugger;
     if (!action.payload || !action.payload.then) {
       return next(action);
     }
@@ -19,4 +21,4 @@ const asyncMiddleware =
     });
   };
 
-export default asyncMiddleware;
+export default async;
